@@ -2,7 +2,7 @@ import { GoogleGenAI, Type, GenerateContentResponse } from "@google/genai";
 import { Recipe } from '../types';
 
 const ai = new GoogleGenAI({
-  apiKey: (import.meta as any).env.VITE_API_KEY
+  apiKey: import.meta.env.VITE_API_KEY as string
 });
 
 export const generateRecipe = async (userRequest: string): Promise<Recipe | null> => {
